@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 
-class Header extends Component {
+class Filter extends Component {
     render() {
+        const wizardFilter = this.props.filter;
+        console.log('array en el filtro', wizardFilter);
         return (
             <div>
                 <h1> Harry Potter Characters </h1>
@@ -12,4 +14,4 @@ class Header extends Component {
     }
 }
 
-export default Header;
+export default Filter;

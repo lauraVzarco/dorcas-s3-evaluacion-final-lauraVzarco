@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Header from './Components/Header';
+import Filter from './Components/Filter';
 import CharacterList from './Components/CharacterList';
 
 class App extends Component {
@@ -19,7 +19,6 @@ class App extends Component {
         this.setState({
           info: json
         });
-        console.log(this.state)
       })
 
   }
@@ -32,8 +31,8 @@ class App extends Component {
 
     return (
       <div>
-        <Header />
-        <CharacterList list={info} />
+        <Filter filter={this.state.info} />
+        <CharacterList list={this.state.info} />
       </div>
     );
   }
