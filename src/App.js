@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import Filter from './Components/Filter';
 import CharacterList from './Components/CharacterList';
+import Character from './Components/Character'
+import { Route, Switch } from 'react-router-dom';
 
 class App extends Component {
   constructor(props) {
@@ -24,8 +26,10 @@ class App extends Component {
     fetch('http://hp-api.herokuapp.com/api/characters')
       .then((response) => response.json())
       .then((json) => {
+        const listWithIds = json.map((wizard, i) => ({ ...wizard, id: '' + i })
+        )
         this.setState({
-          list: json
+          list: listWithIds
         });
       })
   }
@@ -45,8 +49,29 @@ class App extends Component {
           <h1> Harry Potter Characters </h1>
         </header>
         <main>
-          <Filter value={this.state.inputFilterValue} onChange={this.handleFilter} />
-          <CharacterList list={filteredList} />
+          <Switch>
+            <Route exact path='/' render={() =>
+              <div>
+                <Filter value={this.state.inputFilterValue} onChange={this.handleFilter} />
+                <CharacterList list={filteredList} />
+              </div>}
+            />
+            <Route path='/character/:id' render={(props) => {
+              const id = props.match.params.id;
+              const character = this.state.list.find((wizard) => wizard.id === id)
+              return (
+                <Character
+                  wizardPhoto={character.image}
+                  wizardName={character.name}
+                  hogwartsHouse={character.house}
+                  wizardYear={character.yearOfBirth}
+                  wizardPatronus={character.patronus}
+                  wizardIsAlive={character.alive}
+                />
+              )
+            }} />
+          </Switch>
+
         </main>
       </div>
     );

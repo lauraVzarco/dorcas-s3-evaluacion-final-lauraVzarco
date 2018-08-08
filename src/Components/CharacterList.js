@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
 import Card from './Card';
+import { Link } from 'react-router-dom';
+
 
 class CharacterList extends Component {
 
     render() {
         const list = this.props.list;
-        const potterList = list.map((data, i) => {
+        const potterList = list.map((wizard) => {
             return (
-                <li key={i}>
-                    <Card
-                        wizardPhoto={data.image}
-                        wizardName={data.name}
-                        hogwartsHouse={data.house}
-                    />
+                <li key={wizard.id}>
+                    <Link to={'/character/' + wizard.id}>
+                        <Card
+                            wizardPhoto={wizard.image}
+                            wizardName={wizard.name}
+                            hogwartsHouse={wizard.house}
+                        />
+                    </Link>
                 </li>
             )
         });
