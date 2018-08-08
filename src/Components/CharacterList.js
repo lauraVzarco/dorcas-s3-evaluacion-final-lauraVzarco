@@ -4,8 +4,8 @@ import Card from './Card';
 class CharacterList extends Component {
 
     render() {
-        let potterChar = this.props.list;
-        const potterList = potterChar.map((data, i) => {
+        const list = this.props.list;
+        const potterList = list.map((data, i) => {
             return (
                 <li key={i}>
                     <Card
