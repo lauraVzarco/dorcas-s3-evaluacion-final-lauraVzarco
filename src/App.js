@@ -23,7 +23,7 @@ class App extends Component {
 
 
   fetchCharacters() {
-    fetch('http://hp-api.herokuapp.com/api/characters')
+    fetch('https://hp-api.herokuapp.com/api/characters')
       .then((response) => response.json())
       .then((json) => {
         const listWithIds = json.map((wizard, i) => ({ ...wizard, id: '' + i })
