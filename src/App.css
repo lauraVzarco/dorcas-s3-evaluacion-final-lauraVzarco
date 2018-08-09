@@ -1,28 +1,55 @@
-.App {
+.titlePage {
   text-align: center;
-}
+  color: black;
+  font-family: sans-serif; }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
+.contentPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+.listChara {
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: 1fr; }
+
+@media all and (min-width: 768px) {
+  .listChara {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px; } }
+
+.liCard {
+  list-style: none; }
+
+.cardLink {
+  text-decoration: none; }
+
+.wizardCard {
+  width: 163px;
+  height: 325px;
+  background-color: salmon;
+  margin-bottom: 5px;
+  border: 1px solid black; }
+
+.wizardImage {
+  width: 163px;
+  height: 240px; }
+
+.wizardData {
+  text-align: center;
+  text-decoration: none; }
+
+.wizardName {
+  margin-top: 0;
+  margin-bottom: 35px;
   color: white;
-}
+  font-family: sans-serif;
+  font-size: 16px;
+  text-decoration: none; }
 
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
+.wizardHouse {
+  color: white;
+  font-family: sans-serif;
+  text-decoration: none;
+  font-size: 12px;
+  margin-top: 5px; }

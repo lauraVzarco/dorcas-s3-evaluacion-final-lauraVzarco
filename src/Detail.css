@@ -1,0 +1,41 @@
+.detailCard {
+  width: 400px;
+  height: 250px;
+  margin: auto;
+  border: 1px solid black;
+  background-color: salmon;
+  display: flex;
+  flex-direction: row;
+  width: 500px;
+  height: 300px; }
+
+.detailName {
+  color: white;
+  font-family: sans-serif;
+  font-size: 20px;
+  text-align: center; }
+
+.detailPhoto {
+  width: 200px;
+  height: 300px;
+  margin-right: 5px; }
+
+.detailHouse {
+  color: white;
+  font-size: 12px;
+  font-family: sans-serif; }
+
+.detailYear {
+  color: white;
+  font-size: 12px;
+  font-family: sans-serif; }
+
+.detailPatronus {
+  color: white;
+  font-size: 12px;
+  font-family: sans-serif; }
+
+.detailAlive {
+  color: white;
+  font-size: 12px;
+  font-family: sans-serif; }

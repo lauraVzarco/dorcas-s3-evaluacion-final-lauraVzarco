@@ -46,30 +46,39 @@ class App extends Component {
     return (
       <div>
         <header>
-          <h1> Harry Potter Characters </h1>
+          <h1 className="titlePage"> Harry Potter Characters </h1>
         </header>
         <main>
           <Switch>
-            <Route exact path='/' render={() =>
-              <div>
-                <Filter value={this.state.inputFilterValue} onChange={this.handleFilter} />
-                <CharacterList list={filteredList} />
-              </div>}
+            <Route
+              exact path='/'
+              render={() =>
+                <div className="contentPage">
+                  <Filter
+                    value={this.state.inputFilterValue}
+                    onChange={this.handleFilter} />
+                  <CharacterList
+                    className="listPage"
+                    list={filteredList}
+                  />
+                </div>}
             />
-            <Route path='/character/:id' render={(props) => {
-              const id = props.match.params.id;
-              const character = this.state.list.find((wizard) => wizard.id === id)
-              return (
-                <Character
-                  wizardPhoto={character.image}
-                  wizardName={character.name}
-                  hogwartsHouse={character.house}
-                  wizardYear={character.yearOfBirth}
-                  wizardPatronus={character.patronus}
-                  wizardIsAlive={character.alive}
-                />
-              )
-            }} />
+            <Route
+              path='/character/:id'
+              render={(props) => {
+                const id = props.match.params.id;
+                const character = this.state.list.find((wizard) => wizard.id === id)
+                return (
+                  <Character
+                    wizardPhoto={character.image}
+                    wizardName={character.name}
+                    hogwartsHouse={character.house}
+                    wizardYear={character.yearOfBirth}
+                    wizardPatronus={character.patronus}
+                    wizardIsAlive={character.alive}
+                  />
+                )
+              }} />
           </Switch>
 
         </main>

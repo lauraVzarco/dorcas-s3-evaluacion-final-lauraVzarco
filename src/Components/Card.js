@@ -1,24 +1,23 @@
 import React, { Component } from 'react';
+import '../App.css';
 
 
 class Card extends Component {
     render() {
         return (
-            <div>
+            <div className="wizardCard">
                 <img src=
-                    {this.props.wizardPhoto === ""
-                        ? '../defaultimage.jpg'
-                        :
-                        this.props.wizardPhoto}
+                    {this.props.wizardPhoto || '../defaultimage.jpg'}
+                    className="wizardImage"
                 />
-                <h2>
-                    {this.props.wizardName}
-                </h2>
-                <p>
-                    {this.props.hogwartsHouse === ""
-                        ? 'SIN CASA' :
-                        this.props.hogwartsHouse
-                    } </p>
+                <div className="wizardData">
+                    <h2 className="wizardName">
+                        {this.props.wizardName}
+                    </h2>
+                    <p className="wizardHouse">
+                        {this.props.hogwartsHouse || 'SIN CASA'}
+                    </p>
+                </div>
             </div>
         )
     }
