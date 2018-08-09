@@ -6,10 +6,13 @@
     background-color: salmon;
     display: flex;
     flex-direction: row;
-    width: 500px;
+    width: 400px;
     height: 300px;
 }
-
+.detailNameBox{
+    width: 210px;
+    border-bottom: 1px solid white;
+}
 .detailName{
     color:white;
     font-family: sans-serif;
@@ -20,29 +23,48 @@
 .detailPhoto {
     width: 200px;
     height: 300px; 
-    margin-right: 5px;
+    margin: 0;
 }
 
 .detailHouse {
     color:white;
     font-size: 12px;
     font-family: sans-serif;
+    padding-top: 25px;
+    padding-left: 10px;
 }
 
 .detailYear {
     color:white;
     font-size: 12px;
     font-family: sans-serif;
+    padding-left: 10px;
 }
 
 .detailPatronus {
     color:white;
     font-size: 12px;
     font-family: sans-serif;
+    padding-left: 10px;
 }
 
 .detailAlive {
     color:white;
     font-size: 12px;
     font-family: sans-serif;
+    padding-left: 10px;
+}
+
+.backToHome{
+    text-decoration: none;
+    font-family: sans-serif;
+    color: black; 
+}
+
+.backText {
+    width: 75px;
+    height: 20px;
+    margin: 25px;
+    margin-left: 200px;
+    border: 2px solid salmon;
 }

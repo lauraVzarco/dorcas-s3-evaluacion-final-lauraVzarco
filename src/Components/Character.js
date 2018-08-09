@@ -11,9 +11,11 @@ class Character extends Component {
                 <div className="detailCard">
                     <img className="detailPhoto" src={this.props.wizardPhoto} />
                     <div classname="dataDetail">
-                        <h2 className="detailName">
-                            {this.props.wizardName}
-                        </h2>
+                        <div className="detailNameBox">
+                            <h2 className="detailName">
+                                {this.props.wizardName}
+                            </h2>
+                        </div>
                         <p className="detailHouse">
                             Casa: {this.props.hogwartsHouse || 'SIN CASA'}
                         </p>
@@ -24,11 +26,11 @@ class Character extends Component {
                             Patronus: {this.props.wizardPatronus || 'Patronus Desconocido'}
                         </p>
                         <p className="detailAlive">
-                            Estado: {this.props.wizardIsAlive ? 'Vivo' : 'Muerto'}
+                            Estado: {this.props.wizardIsAlive ? 'Vivo 💃' : 'Muerto 💀'}
                         </p>
                     </div>
                 </div>
-                <Link to={'/'}><div> Volver </div> </Link>
+                <Link className="backToHome" to={'/'}><div className="backText"> 🔙 Volver </div> </Link>
             </div>
         )
     }
